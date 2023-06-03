@@ -1,4 +1,4 @@
-package report
+package cleantalk
 
 var wordsList = []string{
 	"puta",
