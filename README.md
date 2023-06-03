@@ -7,5 +7,28 @@ You can find the simple route in the main branch, and in the secondary branch I 
 
 ## Features
 
-- [x] Simple verification of texts containing obscene words.
+- [x] Simple verification.
+
+- [x] API for HTTP requests.
+
+- [ ] Robust verification.
+
+## Differences
+
+With the simple verification you can know if a text contains any obscene words, the simple version brings a series of blacklisted words in different languages.
+
+With obust verification you can determine if a text contains obscene words BUT you can also tell if the person is speaking off key or in a rude, abusive or annoying tone.
+
+You can add your own additional words to your liking in a module that will be enabled soon.
+
+## Stack 
+
+- Golang 1.19x
+- Go Machine Learning 
+- Gin HTTP Server 
+
+## Contributing
+
+If you want to collaborate for the better in the project, open a pull request and I will be happy to review it. 🤙🏻
+
 
