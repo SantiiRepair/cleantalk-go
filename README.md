@@ -17,7 +17,7 @@ You can find the simple route in the main branch, and in the secondary branch I 
 
 With the simple verification you can know if a text contains any obscene words, the simple version brings a series of blacklisted words in different languages.
 
-With obust verification you can determine if a text contains obscene words BUT you can also tell if the person is speaking off key or in a rude, abusive or annoying tone.
+With the robust verification you can determine if a text contains obscene words BUT you can also tell if the person is speaking off key or in a rude, abusive or annoying tone.
 
 You can add your own additional words to your liking in a module that will be enabled soon.
 
