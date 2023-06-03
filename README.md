@@ -23,7 +23,7 @@ You can add your own additional words to your liking in a module that will be en
 
 ## Stack 
 
-- Golang 1.19x
+- Golang 1.20x
 - Go Machine Learning 
 - Gin HTTP Server 
 
