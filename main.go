@@ -1,22 +1,23 @@
 package main
 
-import (
-	"github.com/SantiiRepair/cleantalk-go/cleantalk"
-	"github.com/gin-contrib/cors"
-	gin "github.com/gin-gonic/gin"
-)
+import "fmt"
 
 func main() {
-	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
-	config.AllowMethods = []string{"GET", "POST", "OPTIONS"}
-	config.AllowHeaders = []string{"Authorization", "Content-Type"}
 
-	gin.SetMode(gin.DebugMode)
-	r := gin.New()
-	r.Use(cors.New(config))
+    preprocessData()
 
-	cleantalk.Handler(r)
+    trainModel()
 
-	r.Run(":8080")
+    evaluateModel()
+
+    newText := "This is a rude message."
+
+    predictedLabel := classifyText(newText)
+
+    fmt.Printf("Text: %s\n", newText)
+
+    fmt.Printf("Prediction: %s\n", predictedLabel)
+
 }
+
+
