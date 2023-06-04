@@ -1,22 +1,37 @@
 package main
 
 import (
-	"github.com/SantiiRepair/cleantalk-go/cleantalk"
-	"github.com/gin-contrib/cors"
-	gin "github.com/gin-gonic/gin"
+
+    "github.com/cdipaolo/goml/base"
+
+    "github.com/cdipaolo/goml/linear"
+
 )
 
-func main() {
-	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
-	config.AllowMethods = []string{"GET", "POST", "OPTIONS"}
-	config.AllowHeaders = []string{"Authorization", "Content-Type"}
+func trainModel() {
 
-	gin.SetMode(gin.DebugMode)
-	r := gin.New()
-	r.Use(cors.New(config))
 
-	cleantalk.Handler(r)
 
-	r.Run(":8080")
+    data := base.LoadDataFromCSV("data/text_data.csv")
+
+
+
+    pipeline := base.NewPipeline(
+
+        base.TFIDF{},
+
+    )
+
+
+
+    model := linear.NewL2LogisticRegression(0.01, 100, 1e-6, true)
+
+    pipeline.Add(model)
+
+    pipeline.Fit(data)
+
+
+
+    pipeline.Save("models/trained.bin")
+
 }
