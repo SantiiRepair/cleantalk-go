@@ -1,37 +1,23 @@
 package main
 
-import (
+import "fmt"
 
-    "github.com/cdipaolo/goml/base"
+func main() {
 
-    "github.com/cdipaolo/goml/linear"
+    preprocessData()
 
-)
+    trainModel()
 
-func trainModel() {
+    evaluateModel()
 
+    newText := "This is a rude message."
 
+    predictedLabel := classifyText(newText)
 
-    data := base.LoadDataFromCSV("data/text_data.csv")
+    fmt.Printf("Text: %s\n", newText)
 
-
-
-    pipeline := base.NewPipeline(
-
-        base.TFIDF{},
-
-    )
-
-
-
-    model := linear.NewL2LogisticRegression(0.01, 100, 1e-6, true)
-
-    pipeline.Add(model)
-
-    pipeline.Fit(data)
-
-
-
-    pipeline.Save("models/trained.bin")
+    fmt.Printf("Prediction: %s\n", predictedLabel)
 
 }
+
+
